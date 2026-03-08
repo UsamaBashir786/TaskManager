@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #fafafa 0%, #f1f5f9 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* shadcn/ui design tokens */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.5rem;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* shadcn checkbox */
+.shadcn-checkbox {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 0.125rem);
+  background-color: white;
+  transition: all 0.15s;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.shadcn-checkbox:checked {
+  background-color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
+.shadcn-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.shadcn-checkbox:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* shadcn input */
+.shadcn-input {
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--input));
+  border-radius: calc(var(--radius) - 0.125rem);
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.shadcn-input:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.15);
+}
+
+.shadcn-input::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* shadcn button */
+.shadcn-button {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: calc(var(--radius) - 0.125rem);
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.shadcn-button:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+.shadcn-button:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.shadcn-button-outline {
+  background-color: transparent;
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+}
+
+.shadcn-button-outline:hover {
+  background-color: hsl(var(--secondary));
+  border-color: hsl(var(--border));
+}
+
+.shadcn-button-ghost {
+  background-color: transparent;
+  color: hsl(var(--foreground));
+}
+
+.shadcn-button-ghost:hover {
+  background-color: hsl(var(--secondary));
+}
+
+.shadcn-button-destructive {
+  background-color: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+}
+
+.shadcn-button-destructive:hover {
+  background-color: hsl(var(--destructive) / 0.9);
+}
+
+.shadcn-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* task item */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: calc(var(--radius) - 0.125rem);
+  transition: background-color 0.15s;
+  background-color: hsl(var(--background));
+  border: 1px solid transparent;
+}
+
+.task-item:hover {
+  background-color: hsl(var(--secondary) / 0.5);
+  border-color: hsl(var(--border));
+}
+
+.delete-button {
+  opacity: 0;
+  transition: all 0.15s;
+  padding: 0.375rem;
+  border-radius: calc(var(--radius) - 0.25rem);
+  color: hsl(var(--muted-foreground));
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-item:hover .delete-button {
+  opacity: 1;
+}
+
+.delete-button:hover {
+  background-color: hsl(var(--destructive) / 0.1);
+  color: hsl(var(--destructive));
+}
+
+/* filter button */
+.filter-btn {
+  padding: 0.375rem 0.75rem;
+  border-radius: calc(var(--radius) - 0.25rem);
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--foreground));
+}
+
+.filter-btn.active {
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
+
+/* stats card */
+.stat-card {
+  background-color: hsl(var(--secondary) / 0.3);
+  border-radius: calc(var(--radius) - 0.125rem);
+  padding: 0.5rem 1rem;
+  border: 1px solid hsl(var(--border));
+}
