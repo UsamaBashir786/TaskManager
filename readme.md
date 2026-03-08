@@ -18,9 +18,6 @@
 
 ## ✨ Features
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x400/ffffff/1e293b?text=TaskFlow+Screenshot" alt="TaskFlow Screenshot" width="800"/>
-</div>
 
 ### 🎯 Core Functionality
 - **Task Management** - Create, read, update, and delete tasks
