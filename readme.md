@@ -211,16 +211,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [ ] Keyboard shortcuts
 - [ ] Multi-language support
 
-## 📊 GitHub Stats
-
-<div align="center">
-
-![GitHub stars](https://img.shields.io/github/stars/yourusername/taskflow-shadcn?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/taskflow-shadcn?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/yourusername/taskflow-shadcn?style=social)
-![GitHub followers](https://img.shields.io/github/followers/yourusername?style=social)
-
-</div>
 
 ## 💡 Tips & Tricks
 
