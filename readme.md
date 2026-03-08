@@ -240,7 +240,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ---
 
 <div align="center">
-  <img src="https://via.placeholder.com/100x100/1e293b/ffffff?text=TF" width="50" height="50"/>
   <br/>
   <strong>Made with shadcn/ui</strong>
 </div>
